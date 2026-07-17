@@ -1,0 +1,13 @@
+services:
+  freqtrade:
+    image: freqtradeorg/freqtrade:stable
+    container_name: crypto-trading-bot-freqtrade
+    restart: unless-stopped
+    volumes:
+      - ./user_data:/freqtrade/user_data
+    ports:
+      - "127.0.0.1:8080:8080"
+    command: >
+      webserver
+      --logfile /freqtrade/user_data/logs/freqtrade.log
+      --config /freqtrade/user_data/config.json
