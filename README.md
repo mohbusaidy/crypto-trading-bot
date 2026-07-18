@@ -73,3 +73,45 @@ Password: see user_data/config.json
 ## Safety Notes
 
 This project is configured with `"dry_run": true`, empty Kraken API credentials, and Docker port binding limited to localhost. Do not add real API keys or switch dry-run off unless you intentionally move to a later live-trading milestone.
+
+## Read-Only Dashboard
+
+The dashboard in `dashboard/` is a local Next.js app. It is read-only: it only calls server-side API routes that fetch current state from the local Freqtrade REST API. It does not place, close, or cancel trades.
+
+The current historical Kraken dataset is preliminary until the long `download-data` command finishes. Any historical-performance values should be treated as incomplete.
+
+Install dashboard dependencies:
+
+```bash
+cd dashboard
+npm install
+```
+
+Create a local environment file from the placeholder example:
+
+```bash
+cp .env.example .env.local
+```
+
+Then edit `dashboard/.env.local` with your local Freqtrade API credentials. Keep the API URL bound to localhost:
+
+```text
+FREQTRADE_API_URL=http://127.0.0.1:8080
+FREQTRADE_USERNAME=<local freqtrade username>
+FREQTRADE_PASSWORD=<local freqtrade password>
+FREQTRADE_TIMEOUT_MS=5000
+```
+
+Start the dashboard:
+
+```bash
+npm run dev
+```
+
+Open:
+
+```text
+http://localhost:3000
+```
+
+Stop the dashboard with `Ctrl+C` in the terminal running `npm run dev`.

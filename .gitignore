@@ -28,3 +28,14 @@ __pycache__/
 .DS_Store
 .idea/
 .vscode/
+
+# Dashboard local dependencies, environment, and builds
+dashboard/node_modules/
+dashboard/.next/
+dashboard/out/
+dashboard/coverage/
+dashboard/tsconfig.tsbuildinfo
+dashboard/.env.local
+dashboard/.env.*.local
+!dashboard/.env.example
+dashboard/.vercel/
