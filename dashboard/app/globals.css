@@ -101,10 +101,23 @@ h2 {
   color: var(--cyan);
 }
 
+.read-only-badge.compact {
+  min-height: 30px;
+  padding: 6px 10px;
+  font-size: 12px;
+}
+
 .paper-badge {
   margin-bottom: 12px;
   border-color: rgba(40, 209, 124, 0.45);
   color: var(--green);
+}
+
+.paper-badge.inline {
+  margin-bottom: 0;
+  min-height: 30px;
+  padding: 6px 10px;
+  font-size: 12px;
 }
 
 .refresh-button {
@@ -151,6 +164,19 @@ h2 {
   margin-top: 22px;
 }
 
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.section-heading p {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
 .grid {
   display: grid;
   gap: 12px;
@@ -158,6 +184,16 @@ h2 {
 
 .metrics-grid {
   grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin-top: 16px;
+}
+
+.strategy-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 16px;
+}
+
+.risk-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   margin-top: 16px;
 }
 
@@ -191,6 +227,26 @@ h2 {
   color: var(--red);
 }
 
+.reason-box {
+  margin-top: 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #0e171f;
+  padding: 14px;
+}
+
+.reason-box span {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.reason-box strong {
+  display: block;
+  line-height: 1.4;
+}
+
 .table-wrap {
   width: 100%;
   overflow-x: auto;
@@ -201,6 +257,10 @@ table {
   width: 100%;
   min-width: 920px;
   border-collapse: collapse;
+}
+
+.protection-table {
+  min-width: 760px;
 }
 
 th,
@@ -269,6 +329,33 @@ td {
   margin-top: 16px;
 }
 
+.diagnostics {
+  margin-top: 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #0e171f;
+}
+
+.diagnostics summary {
+  cursor: pointer;
+  padding: 12px 14px;
+  color: var(--cyan);
+  font-weight: 700;
+}
+
+.diagnostic-meta {
+  display: grid;
+  gap: 8px;
+  border-top: 1px solid var(--border);
+  padding: 12px 14px 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.diagnostics .endpoint-list {
+  padding: 0 14px 14px;
+}
+
 .endpoint-row {
   display: flex;
   justify-content: space-between;
@@ -293,7 +380,9 @@ td {
 }
 
 @media (max-width: 1100px) {
-  .metrics-grid {
+  .metrics-grid,
+  .strategy-grid,
+  .risk-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
@@ -313,6 +402,8 @@ td {
   }
 
   .metrics-grid,
+  .strategy-grid,
+  .risk-grid,
   .health-grid {
     grid-template-columns: 1fr;
   }

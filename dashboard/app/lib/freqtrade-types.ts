@@ -36,6 +36,55 @@ export type RecentTrade = {
   duration: Availability<string>;
 };
 
+export type SignalDecision = "ENTER" | "EXIT" | "WAIT";
+
+export type StrategyMonitor = {
+  currentDecision: Availability<SignalDecision>;
+  latestPrice: Availability<number>;
+  latestCompletedCandleTimestamp: Availability<string>;
+  candleDataFreshness: Availability<string>;
+  candleIsStale: boolean;
+  timeUntilCurrentCandleClose: Availability<string>;
+  ema50: Availability<number>;
+  ema200: Availability<number>;
+  rsi: Availability<number>;
+  trendCondition: Availability<boolean>;
+  pullbackCondition: Availability<boolean>;
+  recoveryCondition: Availability<boolean>;
+  entrySignal: Availability<boolean>;
+  exitSignal: Availability<boolean>;
+  reason: Availability<string>;
+};
+
+export type EventLogEntry = {
+  timestamp: string;
+  eventType: string;
+  pair: string;
+  botState: string;
+  signalDecision: string;
+  signalReason: string;
+  details: string;
+};
+
+export type RiskProtection = {
+  method: string;
+  status: "configured" | "not_configured" | "unavailable";
+  preliminary: boolean;
+  source?: string;
+  details: string[];
+};
+
+export type RiskProtections = {
+  dryRunWallet: Availability<number>;
+  stakeAmount: Availability<number | string>;
+  maxOpenTrades: Availability<number>;
+  stoploss: Availability<number>;
+  minimalRoi: Availability<string>;
+  trailingStop: Availability<boolean>;
+  orderTypes: Availability<string>;
+  protections: RiskProtection[];
+};
+
 export type DashboardSummary = {
   generatedAt: string;
   api: {
@@ -60,6 +109,8 @@ export type DashboardSummary = {
   };
   openPositions: OpenPosition[];
   recentTrades: RecentTrade[];
+  strategyMonitor: StrategyMonitor;
+  riskProtections: RiskProtections;
   performance: {
     totalNetProfitLoss: Availability<number>;
     winRate: Availability<number>;
@@ -79,4 +130,5 @@ export type DashboardSummary = {
     preliminaryDatasetWarning: boolean;
     warnings: DashboardWarning[];
   };
+  eventLog: EventLogEntry[];
 };

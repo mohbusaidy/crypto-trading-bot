@@ -1,0 +1,31 @@
+ Container crypto-trading-bot-freqtrade-run-8ee534ef5151 Creating 
+ Container crypto-trading-bot-freqtrade-run-8ee534ef5151 Created 
+2026-07-20 12:48:20,460 - freqtrade - INFO - freqtrade 2026.6
+2026-07-20 12:48:20,712 - numexpr.utils - INFO - NumExpr defaulting to 8 threads.
+2026-07-20 12:48:21,455 - freqtrade.configuration.load_config - INFO - Using config: user_data/config.json ...
+2026-07-20 12:48:21,456 - freqtrade.loggers - INFO - Enabling colorized output.
+2026-07-20 12:48:21,457 - freqtrade.loggers - INFO - Logfile configured
+2026-07-20 12:48:21,457 - freqtrade.loggers - INFO - Verbosity set to 0
+2026-07-20 12:48:21,457 - freqtrade.configuration.configuration - INFO - Parameter --timerange detected: 20250315-20250401 ...
+2026-07-20 12:48:21,457 - freqtrade.configuration.configuration - INFO - Using exchange kraken
+2026-07-20 12:48:21,469 - freqtrade.configuration.configuration - INFO - Using user-data directory: /freqtrade/user_data ...
+2026-07-20 12:48:21,469 - freqtrade.configuration.configuration - INFO - Using data directory: /freqtrade/user_data/data/kraken ...
+2026-07-20 12:48:21,470 - freqtrade.configuration.configuration - INFO - Using pairs ['BTC/EUR']
+2026-07-20 12:48:21,470 - freqtrade.configuration.configuration - INFO - timeframes --timeframes: ['1h']
+2026-07-20 12:48:21,470 - freqtrade.configuration.configuration - INFO - Detected --dl-trades: True
+2026-07-20 12:48:21,470 - freqtrade.configuration.configuration - INFO - Filter trades by timerange: 20250315-20250401
+2026-07-20 12:48:21,471 - freqtrade.exchange.check_exchange - INFO - Checking exchange...
+2026-07-20 12:48:21,473 - freqtrade.exchange.check_exchange - INFO - Exchange "kraken" is officially supported by the Freqtrade development team.
+2026-07-20 12:48:21,473 - freqtrade.configuration.config_validation - INFO - Validating configuration ...
+2026-07-20 12:48:22,549 - freqtrade.exchange.exchange - INFO - Instance is running with dry_run enabled
+2026-07-20 12:48:22,549 - freqtrade.exchange.exchange - INFO - Using CCXT 4.5.61
+2026-07-20 12:48:22,553 - freqtrade.exchange.exchange - INFO - Using Exchange "Kraken"
+2026-07-20 12:48:22,553 - freqtrade.resolvers.exchange_resolver - INFO - Using resolved exchange 'Kraken'...
+2026-07-20 12:48:22,553 - freqtrade.exchange.exchange - INFO - Markets were not loaded. Loading them now..
+2026-07-20 12:48:23,979 - freqtrade.data.history.history_utils - INFO - About to download pairs: ['BTC/EUR'], intervals: ['1h'] to /freqtrade/user_data/data/kraken
+2026-07-20 12:48:24,015 - freqtrade.data.history.history_utils - INFO - Downloading trades for pair BTC/EUR.
+2026-07-20 12:48:31,639 - freqtrade.data.history.history_utils - INFO - Using last trade date -5s - Downloading trades for BTC/EUR since: 2025-03-15T02:07:11.
+2026-07-20 12:48:31,641 - freqtrade.data.history.history_utils - INFO - Current Amount of trades: 6262675
+2026-07-20 13:01:17,936 - freqtrade.data.history.history_utils - INFO - New Amount of trades: 6591344
+Downloading trades [BTC/EUR] ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1/1 100% • 0:07:42 • 0:00:00
+2026-07-20 13:01:17,968 - freqtrade.data.converter.trade_converter - INFO - About to convert pairs: 'BTC/EUR', intervals: '1h' to /freqtrade/user_data/data/kraken
