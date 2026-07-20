@@ -39,3 +39,4 @@ dashboard/.env.local
 dashboard/.env.*.local
 !dashboard/.env.example
 dashboard/.vercel/
+user_data/data/
