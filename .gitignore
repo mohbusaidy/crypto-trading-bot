@@ -41,3 +41,6 @@ dashboard/.env.*.local
 dashboard/.vercel/
 user_data/data/
 user_data/data/
+
+# Local download logs
+/download-*.log
