@@ -8,6 +8,7 @@ import {
   ShieldCheck
 } from "lucide-react";
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { BacktestVisualization } from "@/app/components/BacktestVisualization";
 import type {
   Availability,
   DashboardSummary,
@@ -618,6 +619,8 @@ export default function Home() {
       <StrategyMonitorPanel summary={summary} />
 
       <RiskProtectionsPanel summary={summary} />
+
+      <BacktestVisualization />
 
       <section className="panel">
         <h2>Open Positions</h2>

@@ -1364,7 +1364,7 @@ export async function GET() {
           ? available(runningState, "show_config")
           : unavailable("show_config"),
       dryRunConfirmed: dryRun === true,
-      preliminaryDatasetWarning: true,
+      preliminaryDatasetWarning: false,
       warnings
     },
     eventLog: updateEventLogFromSnapshot({
@@ -1377,7 +1377,7 @@ export async function GET() {
       endpointFailures,
       openPositionCount,
       apiConnectionState: api.connectionStatus,
-      historicalWarningActive: true
+      historicalWarningActive: false
     })
   };
 

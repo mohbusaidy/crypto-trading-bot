@@ -379,10 +379,313 @@ td {
   text-align: right;
 }
 
+.visualization-controls {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.visualization-controls label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.visualization-controls select {
+  min-height: 36px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #0e171f;
+  color: var(--text);
+  padding: 0 34px 0 10px;
+}
+
+.toggle-control {
+  min-height: 36px;
+  grid-auto-flow: column;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #0e171f;
+  padding: 8px 10px;
+}
+
+.toggle-control input {
+  accent-color: var(--cyan);
+}
+
+.compact-button {
+  min-height: 36px;
+  padding: 8px 10px;
+}
+
+.backtest-summary-grid {
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  margin-top: 16px;
+}
+
+.compact-card {
+  padding: 12px;
+}
+
+.compact-card strong {
+  font-size: 14px;
+}
+
+.chart-card {
+  margin-top: 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #0e171f;
+  padding: 14px;
+}
+
+.chart-card-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.chart-card h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.chart-card p {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.chart-legend {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.chart-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.legend-line {
+  display: inline-block;
+  width: 22px;
+  height: 2px;
+  border-radius: 999px;
+}
+
+.close-line {
+  background: var(--cyan);
+}
+
+.ema50-line {
+  background: var(--amber);
+}
+
+.ema200-line {
+  background: #c794ff;
+}
+
+.legend-marker {
+  display: inline-block;
+  width: 0;
+  height: 0;
+}
+
+.legend-marker.entry-marker {
+  border-right: 6px solid transparent;
+  border-bottom: 10px solid var(--green);
+  border-left: 6px solid transparent;
+}
+
+.legend-marker.exit-marker {
+  width: 9px;
+  height: 9px;
+  border: 2px solid var(--red);
+  transform: rotate(45deg);
+}
+
+.chart-shell {
+  position: relative;
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #091017;
+}
+
+.chart-shell svg {
+  display: block;
+  width: 100%;
+  min-width: 920px;
+  height: auto;
+}
+
+.chart-plot {
+  fill: #0b141c;
+  stroke: var(--border);
+}
+
+.chart-grid-line {
+  stroke: rgba(142, 160, 173, 0.2);
+  stroke-width: 1;
+}
+
+.chart-grid-line.subtle {
+  stroke: rgba(142, 160, 173, 0.1);
+}
+
+.chart-axis-label {
+  fill: var(--muted);
+  font-size: 12px;
+}
+
+.price-line,
+.ema50-path,
+.ema200-path,
+.equity-line {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.price-line {
+  stroke: var(--cyan);
+  stroke-width: 1.8;
+}
+
+.ema50-path {
+  stroke: var(--amber);
+  stroke-width: 1.4;
+}
+
+.ema200-path {
+  stroke: #c794ff;
+  stroke-width: 1.4;
+}
+
+.equity-line {
+  stroke: var(--cyan);
+  stroke-width: 2;
+}
+
+.trade-connector {
+  stroke-width: 1.4;
+  opacity: 0.78;
+}
+
+.trade-connector.win {
+  stroke: var(--green);
+}
+
+.trade-connector.loss {
+  stroke: var(--red);
+  stroke-dasharray: 6 4;
+}
+
+.trade-entry-shape,
+.trade-exit-shape {
+  cursor: help;
+  stroke-width: 2;
+  outline: none;
+}
+
+.trade-entry-shape {
+  fill: rgba(40, 209, 124, 0.92);
+  stroke: #102219;
+}
+
+.trade-exit-shape {
+  fill: rgba(255, 92, 106, 0.88);
+  stroke: #270f14;
+}
+
+.trade-entry-shape:focus,
+.trade-exit-shape:focus {
+  stroke: var(--text);
+}
+
+.drawdown-marker {
+  fill: var(--red);
+  stroke: var(--text);
+  stroke-width: 2;
+}
+
+.drawdown-label {
+  fill: var(--red);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.chart-tooltip {
+  position: absolute;
+  z-index: 4;
+  width: min(300px, calc(100% - 20px));
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: rgba(11, 17, 23, 0.96);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  padding: 10px;
+  pointer-events: none;
+}
+
+.chart-tooltip strong {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.chart-tooltip div {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  border-top: 1px solid rgba(142, 160, 173, 0.16);
+  padding-top: 6px;
+  margin-top: 6px;
+  font-size: 12px;
+}
+
+.chart-tooltip span {
+  color: var(--muted);
+}
+
+.chart-tooltip b {
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+.source-note {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.empty-chart {
+  display: grid;
+  min-height: 180px;
+  place-items: center;
+  color: var(--muted);
+}
+
 @media (max-width: 1100px) {
   .metrics-grid,
   .strategy-grid,
   .risk-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .backtest-summary-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
@@ -404,8 +707,17 @@ td {
   .metrics-grid,
   .strategy-grid,
   .risk-grid,
+  .backtest-summary-grid,
   .health-grid {
     grid-template-columns: 1fr;
+  }
+
+  .chart-card-heading {
+    flex-direction: column;
+  }
+
+  .chart-legend {
+    justify-content: flex-start;
   }
 
   .endpoint-row {

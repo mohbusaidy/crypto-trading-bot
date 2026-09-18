@@ -2,6 +2,7 @@
 user_data/data/
 user_data/logs/
 user_data/backtest_results/
+user_data/kraken_ohlcvt_import/
 user_data/hyperopt_results/
 user_data/notebooks/
 user_data/models/
@@ -44,3 +45,4 @@ user_data/data/
 
 # Local download logs
 /download-*.log
+dashboard/download-*.log
